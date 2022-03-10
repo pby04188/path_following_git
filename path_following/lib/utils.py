@@ -149,25 +149,9 @@ class purePursuit : ## purePursuit 알고리즘 적용 ##
 
 
             if rotated_point.x > 0:
-                dis = sqrt(pow(rotated_point.x,2)+pow(rotated_point.y,2))
                 print("clear 1!")
-                
-                if dis >= self.lfd :
-                    print("clear 2!")
-                    self.lfd = self.current_vel.x * 0.65  
-                    if self.lfd < self.min_lfd : 
-                        self.lfd = self.min_lfd
-                    elif self.lfd > self.max_lfd :
-                        self.lfd = self.max_lfd
-
-                    self.forward_point=path_point
-                    self.is_look_forward_point=True
-                    
-                    break
-
-                else:
-                    self.forward_point=path_point
-                    self.is_look_forward_point=True
+                self.forward_point=path_point
+                self.is_look_forward_point=True
 
         theta = atan2(rotated_point.y, rotated_point.x)
 
